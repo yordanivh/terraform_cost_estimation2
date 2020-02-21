@@ -37,4 +37,28 @@ resource "google_compute_instance" "metabase" {
   }
 }
 
+resource "google_compute_instance" "metabase1" {
+  name         = "random-name-changed1"
+  machine_type = "n1-highmem-4"
+  zone        = "europe-north1-a"
+  
+  tags = ["foo", "bar"]
+  
+  metadata = {
+    foo = "bar"
+  }
+  
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+  
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+}
+
 
