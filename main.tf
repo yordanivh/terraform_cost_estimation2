@@ -10,7 +10,7 @@ provider "google" {
 
 provider "null" {}
 
-resource "null_resource" "named" {
+resource "null_resource" "name" {
   }
 
 resource "google_compute_instance" "metabase" {
